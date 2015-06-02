@@ -131,7 +131,5 @@ public class MainThread extends Thread
     private void storeStats()
     {
         Log.d(TAG, "Storing stats");
-        Log.d(TAG, "Done storing stats");
-        Log.d(TAG, "git testing is really quite quite tedious");
     }
 }
