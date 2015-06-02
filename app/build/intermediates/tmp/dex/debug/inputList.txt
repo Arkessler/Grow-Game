@@ -1,0 +1,5 @@
+C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\classes\debug
+C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-0b966e47f5ef7e40b52ae1d08951f5b1e27b8b12.jar
+C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-1b40f568c7a6db99a7291387f411a1d3164ac27c.jar
+C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\classes-6ed80b5648dbf069501f8adfcc001e8983cbbe6e.jar
+C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\classes-2fdd70205af74d888544a94ccb5c1510631057b3.jar

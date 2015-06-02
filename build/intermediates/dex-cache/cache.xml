@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Alexi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-0b966e47f5ef7e40b52ae1d08951f5b1e27b8b12.jar" />
+    </item>
+    <item
+        jar="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\classes-6ed80b5648dbf069501f8adfcc001e8983cbbe6e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-1b40f568c7a6db99a7291387f411a1d3164ac27c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Alexi\Documents\School\Android\Grow\app\build\intermediates\pre-dexed\debug\classes-2fdd70205af74d888544a94ccb5c1510631057b3.jar" />
+    </item>
+
+</items>
