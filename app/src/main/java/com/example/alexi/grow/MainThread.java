@@ -32,7 +32,7 @@ public class MainThread extends Thread
     private long framesSkippedPerStatCycle = 0l;
 
     //number of rendered frames in an interval
-    private int frameCounterPerStatCycle = 0;
+    private int frameCountPerStatCycle = 0;
     private long totalFrameCount = 0l;
     //The last FPS values
     private double fpsStore[];
@@ -64,6 +64,7 @@ public class MainThread extends Thread
     {
         Canvas canvas;
         Log.d(TAG, "Starting game loop");
+        initTimingElements();
 
         long beginTime;
         long diffTime;
@@ -128,8 +129,61 @@ public class MainThread extends Thread
     Tracks the number of frames per period. The numbers of frames since the start of the period are summed up
     and the calculation takes part only if next period and the frame count is reset to 0
      */
-    private void storeStats()
+    private void storeStats() {
+        frameCountPerStatCycle++;
+        totalFrameCount++;
+
+        //check the actual time
+        statusIntervalTimer += (System.currentTimeMillis()-statusIntervalTimer);
+
+        if (statusIntervalTimer >= lastStatusStore + STAT_INTERVAL)
+        {
+            //calculate the actual frames per status check interval
+            double actualFPS = (double)(frameCountPerStatCycle/(STAT_INTERVAL/1000));
+
+            //stores the latest fps in the array
+            fpsStore[(int)statsCount%FPS_HISTORY_NR] = actualFPS;
+
+            //increase the count of how many times the stats have been calculated
+            statsCount++;
+
+            double totalFPS = 0.0;
+            //sum up the stored values
+            for (int i = 0; i<FPS_HISTORY_NR; i++)
+            {
+                totalFPS += fpsStore[i];
+            }
+
+            //obtain the average
+            if (statsCount < FPS_HISTORY_NR)
+            {
+                averageFPS = totalFPS/statsCount;
+            } else
+            {
+                averageFPS = totalFPS/FPS_HISTORY_NR;
+            }
+            //saving the total number of frames skipped
+            totalFramesSkipped+=framesSkippedPerStatCycle;
+            //resetting the counters after status recording (1 sec)
+            framesSkippedPerStatCycle = 0;
+            statusIntervalTimer = 0;
+            frameCountPerStatCycle = 0;
+
+            statusIntervalTimer = System.currentTimeMillis();
+            lastStatusStore = statusIntervalTimer;
+            Log.d(TAG, "Average FPS:"+df.format(averageFPS));
+            mainGamePanel.setAverageFPS("FPS: "+df.format(averageFPS));
+        }
+    }
+
+    private void initTimingElements()
     {
-        Log.d(TAG, "Storing stats");
+        //initialise timing elements
+        fpsStore = new double[FPS_HISTORY_NR];
+        for (int i = 0; i < FPS_HISTORY_NR; i++)
+        {
+            fpsStore[i]=0.0;
+        }
+        Log.d(TAG+".initTimingElements()", "Timing elements for stats inititialised");
     }
 }
